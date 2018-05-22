@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+
+<!--
+---- I would fully expect every one of these links to work.
+---- Each should generate an HTML file, and clicking each link
+---- should navigate to the file instead of serving index.html.
+---->
+
+<!-- Sub-directories -->
+<a href="/about">About</a>			<!-- Does not work. Serves index.html content. -->
+<a href="/schedule/">Schedule</a>		<!-- Does not work. Serves index.html content. -->
+<a href="./submit/">Submit</a>			<!-- Does not work. Serves index.html content. -->
+<a href="moderate/">Moderate</a>		<!-- Does not work. Serves index.html content. -->
+<a href="social/index.html">Social</a>		<!-- Works, but leaves an ugly URL. -->
+
+<!-- Siblings -->
+<a href="pricing.html">Pricing</a>		<!-- Works. -->
+<a href="./contact.html">Contact</a>		<!-- Works. -->
+
+<!-- Absolute Paths -->				<!-- Should be fixed by https://github.com/parcel-bundler/parcel/pull/1407 -->
+<!-- <a href="/news/index.html">News</a> -->	<!-- Does not work. Causes a compiler error. -->
+<!-- <a href="/privacy.html">Privacy</a> -->	<!-- Does not work. Causes a compiler error. -->
+
+</body>
+</html>
